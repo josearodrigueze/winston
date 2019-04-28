@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="jumbotron" id="contact1">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h4 class="display-5">Contactanos</h4>
+                <p class="lead">
+                    Estamos en la plaza Miquel dolç, Palma de Mallorca<br>
+                    llamanos al tlf: 600100100<br>
+                    Envianos un E-mail a: <a href="mailto:contact@pandorasbox.info?subject=Informacion">Contact@pandorasbox.info</a>
+                </p>
+                <h4 class="display-5">Ó te contactamos nosotros</h4>
+                <form id="contact">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label><span id="rqname" class="h1">Este campo es obligatorio</span>
+                        <input class="form-control" type="text" name="Nombre" id="name" required=”required”>
+                        <label for="apellido">Apellido:</label><small class="h1" id="rqsur">Este campo es obligatorio</small>
+                        <input class="form-control" type="text" name="Apellido" id="apellido" required=”required”>
+                        <label for="movil">Tlf. Movil:</label><small class="h1" id="rqtlf">Numero invalido</small>
+                        <input class="form-control" type="tel" pattern="[0-9]{9}" name="Tlf. Movil" id="movil"
+                            placeholder="6....." required=”required”>
+                        <label for="mail">E-mail:</label><small class="h1" id="rqmail">Correo invalido</small>
+                        <input class="form-control" type="email" name="Email" id="mail" required=”required”>
+                        <label for="fecha">Fecha:</label><small class="h1" id="rqdate">    Este campo es obligatorio</small>
+                        <input class="form-control" type="text" name="fecha" id="fecha" required=”required” placeholder="dd/mm/aaaa"><br>
+                        <label for="motivos">Acerca de lo que necesita</label><small class="h1" id="rqreasons">Mminimo 100 caracteres</small>
+                        <textarea class="form-control" name="Motivos" id="txtarea" cols="15" rows="5" required=”required”></textarea>
+                        <button class="btn btn-secondary" type="submit" name="Enviar" id="enviar">Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-6 text-center">
+                <h3 class="lead"><a href="https://www.google.com/maps/place/Plaza+de+Miquel+Dol%C3%A7,+07008+Palma+de+Mallorca,+Islas+Baleares,+Espa%C3%B1a/@39.5764255,2.6666171,17z/data=!3m1!4b1!4m5!3m4!1s0x129793a620cb1e0b:0x3524efe5fe46c8ac!8m2!3d39.5764255!4d2.6688058"
+                        target="_blank">Donde Estamos</a></h3>
+
+
+                <div id="mapa" class="img-fluid max-width: 100%; rounded"></div>
+                
+                <div>
+                    <button id="start">Como Llegar</button>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+        
+    <script src="scripts/map.js"></script>
+    <script src="scripts/checks.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZNVU-4mRwYKTfgHePaVSYJWW6EUn_pmQ&callback=map1"></script>
+    
+
+</body>
+
+</html>

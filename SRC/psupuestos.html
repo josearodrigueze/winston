@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <div id="budget">
+        <div class="jumbotron">
+            <p class="lead">Estaremos encantados de enviarte un presupuesto aproximado si nos das tus datos de
+                contacto. </p>
+            <h4 class="display-5">DATOS</h4>
+            <form action="" oninput="resultado(), pcheck()">
+                <div class="form-group" id="formulario">
+                    <label for="name">Nombre</label><span id="rqname" class="h1">Este campo es obligatorio</span>
+                    <input class="form-control" type="text" name="Nombre" id="name" required=”required”>
+                    <label for="apellido">Apellido</label><small class="h1" id="rqsur">Este campo es obligatorio</small>
+                    <input class="form-control" type="text" name="Apellido" id="apellido" required=”required”>
+                    <label for="movil">Tlf. Movil</label><small class="h1" id="rqtlf">Numero invalido</small>
+                    <input class="form-control" type="tel" pattern="[0-9]{9}" name="Tlf. Movil" id="movil" placeholder="6..."
+                        required=”required”>
+                    <label for="mail">E-mail</label><small class="h1" id="rqmail">Correo invalido</small>
+                    <input class="form-control" type="email" name="Email" id="mail" required=”required”><br><br>
+
+                    <h4 class="display-5">LA WEB</h4><br>
+
+                    <label for="page">Tipo de pagina:</label><span id="rqpage" class="h1">Seleccione un tipo de pagina</span>
+                    <select id="kinds" class="form-control" required="required">
+                        <option value="0" selected>--Seleccione un tipo--</option>
+                        <option value="1200">NavBar</option>
+                        <option value="1100">BreadCrumbs</option>
+                        <option value="1000">SideBar</option>
+                    </select><br>
+                    <label for="plazo">Plazo en meses.</label><span id="rqplazo" class="h1">Indique un plazo</span>
+                    <input class="form-control" type="number" min="1" id="plazo" value="" required=”required”>
+                    <small class="form-text text-muted">5% de descuento por cada mes de plazo hasta un maximo del 20%</small><br>
+                    <span class="lead">Marque las secciones deseadas.</span><span id="rqsecciones" class="h1 h2">seleccione al menos una seccion</span><br><br>
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Quienes somos
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Donde Estamos
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Galeria de Fotos
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> eCommerce <br>
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Gestion Interna
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Noticias
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Facebook
+                    <input type="checkbox" id="secciones" value="400" onclick="resultado()"> Twiter <br><br>
+                    <h4 class="display-5">Presupuesto estimado</h4>
+                    <span class="lead">Subtotal: </span><span id="subtotal"></span><br>
+                    <span class="lead">Total con descuento: </span><span id="result"></span><br>
+                    <input class="btn btn-secondary" type="submit" name="Enviar" id="enviar" value="Enviar" onclick="sendcheck()"></input>
+                    <h5 class="lead">Recuerde que este presupuesto es estimado, dependiendo de la web podria aumentar o
+                        disminuir.</h5>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="scripts/checks.js"></script>
+
+</body>
+
+</html>
