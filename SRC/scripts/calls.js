@@ -1,4 +1,5 @@
 //llamada automatica pagina de inicio
+/*
 $('#inicio').ready(function () {
     $('#contenedor').load('inicio.html #init');
 })
@@ -15,8 +16,7 @@ $('#budget').on('click', function () {
     $('#budget').addClass('active');
     $('#contact').removeClass('active');
     $('#dropdown').removeClass('active');
-});
-
+})
 //llamada a pagina galeria
 function portfolio() {
     $('#contenedor').load('pfolio.html #pfolio');
@@ -24,7 +24,6 @@ function portfolio() {
     $('#contact').removeClass('active');
     $('#budget').removeClass('active');
 }
-
 //llamada a pagina de contacto
 function contact() {
     $('#contenedor').load('contact.html');
@@ -32,7 +31,6 @@ function contact() {
     $('#budget').removeClass('active');
     $('#dropdown').removeClass('active');
 }
-
 //llamada a pagina de presupuestos
 function budgets() {
     $('#contenedor').load('psupuestos.html #budget');
@@ -40,20 +38,4 @@ function budgets() {
     $('#contact').removeClass('active');
     $('#dropdown').removeClass('active');
 }
-
-//llamada a presupuestos
-var appNavigation = ['projects', 'news', 'customers', 'users', 'profile', 'appointment', 'dropdown'];
-/*
-$('#navbarsupportedcontent ul').on('click', 'li  > a', (e) => {
-    var clickedNavElm = e.target.id;
-    appNavigation.forEach((item) => {
-        var navElm = $('#' + item);
-        if (item === clickedNavElm) {
-            $('#contenedor').load(item + '.html');
-            navElm.addClass('active');
-            return;
-        }
-        navElm.removeClass('active');
-    });
-});
 */

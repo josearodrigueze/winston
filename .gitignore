@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+JSAJAXPROJECT.iml
+SRC/uploads/*
+!SRC/uploads/index.html
+!SRC/uploads/index.php

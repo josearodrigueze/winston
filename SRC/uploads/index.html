@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+
+<head>
+    <!--favicon-->
+    <link rel="icon" href="../img/pandoras-box.png" sizes="32x32" type="image/png">
+    <title>Project Pandora</title>
+    <script type="text/javascript">window.location.replace("../index.php")</script>
+</head>
+<body></body>
+
+</html>

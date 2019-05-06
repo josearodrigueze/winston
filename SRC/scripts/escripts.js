@@ -1,16 +1,3 @@
-// saludo 
-function timer() {
-    /*
-    setTimeout(() => {
-        var d = new Date();
-        var n = d.getHours();
-        if(n <= 13 ){alert('Buenos dias.')}
-        if (n > 13){alert('Buenas tardes.')}
-    }, 5000);
-    */
-}
-
-
 //Barra lateral de noticias
 function noticias() {
     var xhttp, xmlDoc, txt, i;
@@ -36,9 +23,7 @@ function noticias() {
             document.getElementById("XmlOutput").innerHTML = txt;
         }
     };
-
-    xhttp.open("GET", "./php/noticias.php", true);
-    //xhttp.open("GET", "noticias.xml", true);
+    xhttp.open("GET", "noticias.xml", true);
     xhttp.send();
 }
 
