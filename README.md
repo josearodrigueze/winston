@@ -1,2 +1,2 @@
 # winston
-examen de winston tratando de parecer novato
+examen de winston, yo cometiendo las peores practicas
