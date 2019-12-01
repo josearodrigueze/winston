@@ -52,16 +52,40 @@ if (!empty($id)) {
                   rows="3" placeholder="Descripción"><?= $desc ?></textarea>
 
         <br/>
+
+        <!--
         <label for="project-start">Fecha de inicio</label>
         <input type="text" id="project-start" name="fecha_inicio" class="form-control mb-4"
-               placeholder="01-01-1900" value="<?= $start ?>">
+               placeholder="1900-12-25" value="<?= $start ?>">
 
         <label for="project-finish">Fecha de termino</label>
         <input type="text" id="project-finish" name="fecha_fin" class="form-control mb-4"
-               placeholder="01-01-1900" value="<?= $end ?>">
+               placeholder="1900-12-25" value="<?= $end ?>">
+        -->
+
+        <div class="form-group">
+            <label for="project-start">Fecha de inicio</label>
+            <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"
+                       name="fecha_inicio" value="<?= $start ?>" readonly="readonly"/>
+                <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="project-finish">Fecha de termino</label>
+            <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"
+                       name="fecha_fin" value="<?= $end ?>" readonly="readonly"/>
+                <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
 
         <label for="project-tecnologies">Tecnologías</label>
-        <select id="project-tecnologies" name="tecnologia" multiple
+        <select id="project-tecnologies" name="tecnologia[]" multiple
                 class="browser-default custom-select mb-4 chosen-select">
             <?php
             $array = ["php", "html", "javascript", "sql"];
@@ -119,4 +143,16 @@ if (!empty($id)) {
 
 <script type="text/javascript">
     $(".chosen-select").chosen();
+
+    $(function () {
+        $('#datetimepicker7').datetimepicker({format: 'YYYY-MM-DD', ignoreReadonly: true});
+        $('#datetimepicker8').datetimepicker({format: 'YYYY-MM-DD', ignoreReadonly: true, useCurrent: false});
+
+        $("#datetimepicker7").on("change.datetimepicker", function (e) {
+            $('#datetimepicker8').datetimepicker('minDate', e.date);
+        });
+        $("#datetimepicker8").on("change.datetimepicker", function (e) {
+            $('#datetimepicker7').datetimepicker('maxDate', e.date);
+        });
+    });
 </script>

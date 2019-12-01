@@ -13,9 +13,10 @@ $titulo = mysqli_real_escape_string($link, (strip_tags($_REQUEST["titulo"], ENT_
 $descripcion = mysqli_real_escape_string($link, (strip_tags($_REQUEST["descripcion"], ENT_QUOTES)));//Escanpando caracteres
 $fecha_inicio = mysqli_real_escape_string($link, (strip_tags($_REQUEST["fecha_inicio"], ENT_QUOTES)));//Escanpando caracteres
 $fecha_fin = mysqli_real_escape_string($link, (strip_tags($_REQUEST["fecha_fin"], ENT_QUOTES)));//Escanpando caracteres
-$tecnologia = mysqli_real_escape_string($link, (strip_tags($_REQUEST["tecnologia"], ENT_QUOTES)));//Escanpando caracteres
+$finalizado = empty($_REQUEST["finalizado"]) ? 0 : $_REQUEST["finalizado"];
+$tecnologias = (isset($_REQUEST["tecnologia"])) ? $_REQUEST['tecnologia'] : [];
+$tecnologias = implode(', ', $tecnologias);
 
-$finalizado = mysqli_real_escape_string($link, (strip_tags($_REQUEST["finalizado"], ENT_QUOTES)));//Escanpando caracteres
 $fotos = [];
 
 $currentDir = getcwd();
@@ -76,7 +77,6 @@ if (empty($id)) {
     $foto1 = empty(count($fotos) > 0 && $fotos[0]) ? null : $fotos[0];
     $foto2 = empty(count($fotos) > 1 && $fotos[1]) ? null : $fotos[1];
     $foto3 = empty(count($fotos) > 2 && $fotos[2]) ? null : $fotos[2];
-    $finalizado = empty($finalizado ? 0 : $finalizado);
 
     $query = "
       INSERT INTO proyectos (
@@ -86,7 +86,7 @@ if (empty($id)) {
         '${titulo}', '${descripcion}', 
         '${foto1}', '${foto2}', '${foto3}',
         '${fecha_inicio}', '${fecha_fin}', 
-        ${finalizado}, '${tecnologia}'
+        ${finalizado}, '${tecnologias}'
       )";
 
     $update = mysqli_query($link, $query) or die(mysqli_error());
@@ -102,8 +102,9 @@ if (empty($id)) {
       fecha_inicio = '${fecha_inicio}', 
       fecha_fin = '${fecha_fin}', 
       finalizado = ${finalizado}, 
-      tecnologia = '${tecnologia}' 
+      tecnologia = '${tecnologias}' 
   WHERE proyectos.id = ${id}";
+    echo $query;
     $update = mysqli_query($link, $query) or die(mysqli_error());
 }
 

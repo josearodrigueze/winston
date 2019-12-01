@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="scripts/dist/photoswipe.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css"
+    <link href="//cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css"
           rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
           integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
 
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
           integrity="sha256-EH/CzgoJbNED+gZgymswsIOrM9XhIbdSJ6Hwro09WE4=" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="scripts/dist/photoswipe.css">
     <!--favicon-->
     <link rel="icon" href="img/pandoras-box.png" sizes="32x32" type="image/png">
 
@@ -76,8 +79,8 @@
                     <li class="nav-item dropdown ml-auto">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="project-list.php">Proyectos</a>
-                            <a class="dropdown-item" href="./admin-noticias.php">Noticias</a>
+                            <a class="dropdown-item" href="./project-list.php">Proyectos</a>
+                            <a class="dropdown-item" href="./news-list.php">Noticias</a>
                             <a class="dropdown-item" href="./perfil.php">Perfil</a>
                             <a class="dropdown-item" href="./citas.php">Citas</a>
                             <div class="dropdown-divider"></div>
