@@ -23,7 +23,7 @@ function noticias() {
             document.getElementById("XmlOutput").innerHTML = txt;
         }
     };
-    xhttp.open("GET", "noticias.xml", true);
+    xhttp.open("GET", "news-ajax.php", true);
     xhttp.send();
 }
 
