@@ -7,7 +7,7 @@ $id = (isset($_REQUEST["id"])) ? $_REQUEST["id"] : null;
 
 $title = '';
 $desc = '';
-$tech = '';
+$categoria = '';
 $autor = '';
 if (!empty($id)) {
     $id = mysqli_real_escape_string($link, (strip_tags($id, ENT_QUOTES)));//Escanpando caracteres
@@ -43,61 +43,33 @@ if (!empty($id)) {
         <div class="form-group">
             <label for="news-description">Noticia</label>
             <textarea class="form-control rounded-0" id="news-description" name="descripcion"
-                      rows="3" placeholder="Descripción" required><?= $desc ?></textarea>
+                      rows="3" placeholder="Noticia" required><?= $desc ?></textarea>
         </div>
 
         <div class="form-group">
-            <label for="news-tecnologies">Tecnologías</label>
-            <select id="news-tecnologies" name="tecnologia[]" multiple required
+            <label for="news-tecnologies">Categorías</label>
+            <select id="news-tecnologies" name="categoria[]" multiple required
                     class="browser-default custom-select mb-4 chosen-select">
                 <?php
                 $array = ["php", "html", "javascript", "sql"];
                 foreach ($array as $valor) {
-                    $selected = strpos(strtolower($tech), strtolower($valor)) !== false; ?>
+                    $selected = strpos(strtolower($categoria), strtolower($valor)) !== false; ?>
                     <option value="<?= $valor ?>"<?= $selected ? 'selected="selected"' : '' ?>><?= $valor ?></option>
                 <?php } ?>
             </select>
         </div>
 
-        <div class="custom-control custom-checkbox mb-4">
-            <input type="checkbox" class="custom-control-input" id="news-is-finished" value="1"
-                   name="finalizado" <?= ($finish == 1) ? "checked='checked'" : '' ?>>
-            <label class="custom-control-label" for="news-is-finished">Finalizó?</label>
-        </div>
-
-        <div class="custom-control custom-checkbox mb-4">
-            <?php if (!empty($foto1)) : ?>
-                <img src="<?= $foto1 ?>" alt="foto-1" class="img-thumbnail" style="max-width: 86px"/>
-            <?php endif; ?>
-            <label for="foto1">Foto</label>
-            <input id="foto1" name="foto1" type="file" required/>
-        </div>
-
-        <div class="custom-control custom-checkbox mb-4">
-            <?php if (!empty($foto2)) : ?>
-                <img src="<?= $foto2 ?>" alt="foto-2" class="img-thumbnail" style="max-width: 86px"/>
-            <?php endif; ?>
-            <label for="foto2">Foto</label>
-            <input id="foto2" name="foto2" type="file"/>
-        </div>
-
-        <div class="custom-control custom-checkbox mb-4">
-            <?php if (!empty($foto3)) : ?>
-                <img src="<?= $foto3 ?>" alt="foto-3" class="img-thumbnail" style="max-width: 86px"/>
-            <?php endif; ?>
-            <label for="foto3">Foto</label>
-            <input id="foto3" name="foto3" type="file"/>
-        </div>
-
-        <div class="custom-control custom-checkbox mb-4">
-            <label for="foto3">Foto Max 2MB</label>
+        <div class="form-group">
+            <label for="news-title">Autor</label>
+            <input type="text" id="news-title" name="autor" class="form-control mb-4"
+                   placeholder="Autor" value="<?= $autor ?>" required/>
         </div>
 
         <div class="text-center">
             <a class="btn btn-light" href="./news-list.php">Volver</a>
             <button class="btn btn-light" type="reset">Limpiar</button>
             <button class="btn btn-info" type="submit" name="submit" id="news-submit">
-                <?= (empty($id)) ? 'Crear' : 'Editar' ?> proyecto
+                <?= (empty($id)) ? 'Crear' : 'Editar' ?> Noticia
             </button>
         </div>
     </form>

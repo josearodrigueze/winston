@@ -2,7 +2,7 @@
 require_once('./backend/conexion.php');
 $id = mysqli_real_escape_string($link, (strip_tags($_REQUEST["id"], ENT_QUOTES)));//Escanpando caracteres
 
-if ($_REQUEST["action"] == "delete") {
+if (isset($_REQUEST["action"]) && $_REQUEST["action"] == "delete") {
     $query = "DELETE pj FROM proyectos pj WHERE pj.id=${id}";
     $update = mysqli_query($link, $query) or die(mysqli_error());
     header("Location: project-list.php?action=deleted");
@@ -73,7 +73,6 @@ if (!empty($errors)) {
 
 $update = false;
 if (empty($id)) {
-    print_r($fotos);
     $foto1 = empty(count($fotos) > 0 && $fotos[0]) ? null : $fotos[0];
     $foto2 = empty(count($fotos) > 1 && $fotos[1]) ? null : $fotos[1];
     $foto3 = empty(count($fotos) > 2 && $fotos[2]) ? null : $fotos[2];
@@ -104,7 +103,6 @@ if (empty($id)) {
       finalizado = ${finalizado}, 
       tecnologia = '${tecnologias}' 
   WHERE proyectos.id = ${id}";
-    echo $query;
     $update = mysqli_query($link, $query) or die(mysqli_error());
 }
 
