@@ -6,7 +6,7 @@ $res = mysqli_query($link, $sql);
 ?>
 
 <div id="projects-admin-list" class="jumbotron">
-    <?php if ($_REQUEST["action"] == "deleted"): ?>
+    <?php if (isset($_REQUEST["action"]) && $_REQUEST["action"] == "deleted"): ?>
         <div class="alert alert-success" role="alert">
             Proyecto eliminado exitosamente.
         </div>
@@ -76,7 +76,7 @@ $res = mysqli_query($link, $sql);
 
 <script type="text/javascript">
     function deleteProject(id) {
-        bootbox.confirm("Esta acción eliminara el producto indicado, ¿esta seguro?", function (result) {
+        bootbox.confirm("Esta acción eliminara el proyecto indicado, ¿esta seguro?", function (result) {
             if (result) {
                 window.location.href = "./project-save.php?id=" + id + "&action=delete";
             }
