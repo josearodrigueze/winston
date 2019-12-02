@@ -55,6 +55,8 @@
 
                     <!-- Portafolio -->
                     <li class="nav-item dropdown" id="dropdown">
+                        <a class="nav-link" href="project-customer-list.php">Portafolio</a>
+                        <!--
                         <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown"
                            data-toggle="dropdown">Portafolio </a>
                         <div class="dropdown-menu">
@@ -63,6 +65,7 @@
                             <a class="dropdown-item" href="maqueta2.html" target="_blank">NAVBAR</a>
                             <a class="dropdown-item" href="maqueta3.html" target="_blank">SIDEBAR</a>
                         </div>
+                        -->
                     </li>
 
                     <!-- Presupuestos -->
