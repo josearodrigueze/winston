@@ -76,7 +76,7 @@ if (!empty($id)) {
                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                 </div>
                 <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"
-                       name="fecha_fin" value="<?= $end ?>" readonly="readonly" required/>
+                       name="fecha_fin" value="<?= $end ?>" readonly="readonly"/>
             </div>
         </div>
 

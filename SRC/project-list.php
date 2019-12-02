@@ -47,7 +47,7 @@ $res = mysqli_query($link, $sql);
                     </a>
                     <!-- href="./project-save.php?id=<?= $r['id'] ?>&action=delete"  -->
                     <a class="btn btn-danger" onclick="deleteProject(<?= $r['id'] ?>)">
-                        <span class="fas fa-trash" aria-hidden="true"></span>
+                        <span class="fas fa-trash-alt" aria-hidden="true"></span>
                     </a>
                 </td>
                 <td><?= $r['titulo'] ?></td>
