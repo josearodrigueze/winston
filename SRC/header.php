@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!doctype html>
 <html lang="es">
 
@@ -19,7 +20,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
           integrity="sha256-EH/CzgoJbNED+gZgymswsIOrM9XhIbdSJ6Hwro09WE4=" crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"/>
 
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="scripts/dist/photoswipe.css">
@@ -78,7 +80,6 @@
                         <a class="nav-link" href="#" id="contacto">Contacto</a>
                     </li>
 
-
                     <li class="nav-item dropdown ml-auto">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -89,6 +90,11 @@
                             <a class="dropdown-item" href="./users-profile.php">Perfil</a>
                             <a href="#" class="dropdown-item">Logout</a>
                         </div>
+                    </li>
+
+                    <!-- Login -->
+                    <li class="nav-item" id="contact">
+                        <a class="nav-link" href="./login.php">Login</a>
                     </li>
                 </ul>
             </div>
