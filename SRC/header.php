@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php require_once('./backend/session-validate.php'); ?>
 <!doctype html>
 <html lang="es">
 
@@ -80,22 +80,32 @@
                         <a class="nav-link" href="#" id="contacto">Contacto</a>
                     </li>
 
-                    <li class="nav-item dropdown ml-auto">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="./project-list.php">Proyectos</a>
-                            <a class="dropdown-item" href="./news-list.php">Noticias</a>
-                            <a class="dropdown-item" href="./citas.php">Usuarios</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./users-profile.php">Perfil</a>
-                            <a href="#" class="dropdown-item">Logout</a>
-                        </div>
-                    </li>
+                    <?php if (!empty($_SESSION['user_id'])): ?>
+                        <li class="nav-item dropdown ml-auto">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <?php if ($_SESSION['user_type'] == "ADMINISTRADOR"): ?>
+                                    <a class="dropdown-item" href="./project-list.php">Proyectos</a>
+                                    <a class="dropdown-item" href="./news-list.php">Noticias</a>
+                                    <a class="dropdown-item" href="./users-list.php">Usuarios</a>
+                                    <div class="dropdown-divider"></div>
+                                <?php endif; ?>
+
+                                <a class="dropdown-item" href="./users-profile.php">Perfil</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
 
                     <!-- Login -->
-                    <li class="nav-item" id="contact">
-                        <a class="nav-link" href="./login.php">Login</a>
+                    <li class="nav-item" id="session">
+                        <?php if (empty($_SESSION['user_id'])): ?>
+                            <a class="nav-link" href="./login.php">Login</a>
+                        <?php else: ?>
+                            <a class="nav-link" href="./logout.php">Logout</a>
+                        <?php endif; ?>
                     </li>
+
                 </ul>
             </div>
         </nav>

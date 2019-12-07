@@ -14,13 +14,13 @@
 
                         <div class="form-group">
                             <label for="inputEmail" class="sr-only">Email address</label>
-                            <input type="text" id="inputUsuario" name="inputUsuario" class="form-control"
+                            <input type="text" id="inputEmail" name="email" class="form-control"
                                    placeholder="Nombre de usuario" required autofocus>
                         </div>
 
                         <div class="form-group">
                             <label for="inputPassword" class="sr-only">Password</label>
-                            <input type="password" id="inputPassword" name="inputPassword" class="form-control"
+                            <input type="password" id="inputPassword" name="password" class="form-control"
                                    placeholder="Password" required>
                             <div class="checkbox"></div>
                         </div>

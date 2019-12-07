@@ -2,13 +2,11 @@
 <?php require_once('./backend/conexion.php'); ?>
 <?php
 // example -> https://obedalvarado.pw/blog/crud-datos-empleados-php-mysql-bootstrap/
-$id = (isset($_REQUEST["id"])) ? $_REQUEST["id"] : null;
+$id = $_SESSION['user_id'];
 
 $nombre = '';
 $usuario = '';
 $password = '';
-$tipo_usuario = '';
-$status = '';
 if (!empty($id)) {
     $id = mysqli_real_escape_string($link, (strip_tags($id, ENT_QUOTES)));//Escanpando caracteres
 
@@ -25,7 +23,7 @@ if (!empty($id)) {
     }
 }
 ?>
-<div id="projects-admin-add" class="jumbotron">
+<div id="user-profile-content" class="jumbotron">
     <form class="border border-light p-5" id="users-admin-form" action="users-save.php" method="POST">
         <div class="alert" role="alert" id="users-alert" style="display: none"></div>
 
@@ -63,27 +61,8 @@ if (!empty($id)) {
 <?php include_once './footer.php'; ?>
 
 <script type="text/javascript">
-    $(".chosen-select").chosen();
-    $.validator.setDefaults({ignore: ":hidden:not(select)"});
-
-    // validation of chosen on change
-    if ($("select.chosen-select").length > 0) {
-        $("select.chosen-select").each(function () {
-            if ($(this).attr('required') !== undefined) {
-                $(this).on("change", function () {
-                    $(this).valid();
-                });
-            }
-        });
-    }
-
     $('#users-admin-form').validate({
-        errorPlacement: function (error, element) {
-            if (element.is("select.chosen-select")) {
-                element.next("div.chosen-container").append(error);
-            } else {
-                error.insertAfter(element);
-            }
+        errorPlacement: function (error) {
             error.addClass("text-danger");
         }
     });

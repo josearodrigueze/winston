@@ -1,21 +1,11 @@
 <?php
-require_once('./backend/conexion.php');
+session_start();
 
-$email = mysqli_real_escape_string($link, (strip_tags($_REQUEST["email"], ENT_QUOTES)));//Escanpando caracteres
-$password = mysqli_real_escape_string($link, (strip_tags($_REQUEST["password"], ENT_QUOTES)));//Escanpando caracteres
+if (empty($_SESSION['user_id'])) {
+    $free_pass = array('/SRC/login.php', '/SRC/index.php', '/SRC/project-customer-list.php');
 
-$sql = "SELECT * FROM usuarios WHERE usuario='${usuario}' AND password='${password}' AND status= 1 LIMIT 1";
-$result = mysqli_query($link, $sql);
-
-$count = mysqli_num_rows($result);
-
-if ($count > 0) {
-    $user = mysqli_fetch_assoc($result);
-    $_SESSION['user_email'] = $usuario;
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_type'] = $user['tipo_usuario'];
-    header("Location: ./index.php");
-} else {
-    header("Location: ./login.php?action=invalid");
+    if (!in_array($_SERVER['REQUEST_URI'], $free_pass)) {
+        header("Location: ./index.php");
+        die();
+    }
 }
-die();
