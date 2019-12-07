@@ -84,9 +84,9 @@
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="./project-list.php">Proyectos</a>
                             <a class="dropdown-item" href="./news-list.php">Noticias</a>
-                            <a class="dropdown-item" href="./perfil.php">Perfil</a>
-                            <a class="dropdown-item" href="./citas.php">Citas</a>
+                            <a class="dropdown-item" href="./citas.php">Usuarios</a>
                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./users-profile.php">Perfil</a>
                             <a href="#" class="dropdown-item">Logout</a>
                         </div>
                     </li>

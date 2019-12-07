@@ -5,7 +5,7 @@ $sql = "select * from noticias WHERE 1=1";
 $res = mysqli_query($link, $sql);
 ?>
 
-<div id="projects-admin-list" class="jumbotron">
+<div id="news-admin-list" class="jumbotron">
     <?php if (isset($_REQUEST["action"]) && $_REQUEST["action"] == "deleted"): ?>
         <div class="alert alert-success" role="alert">
             Noticia eliminada exitosamente.
@@ -22,7 +22,7 @@ $res = mysqli_query($link, $sql);
     </div>
 
     <br/>
-    <table class="table table-striped" id="projects-table">
+    <table class="table table-striped" id="news-table">
         <thead>
         <tr>
             <th>Acciones</th>
@@ -32,7 +32,7 @@ $res = mysqli_query($link, $sql);
             <th>Fecha</th>
         </tr>
         </thead>
-        <tbody id="projects-admin-list-body">
+        <tbody id="news-admin-list-body">
         <?php while ($r = mysqli_fetch_assoc($res)) { ?>
             <tr>
                 <td class="btn-group">
@@ -65,7 +65,7 @@ $res = mysqli_query($link, $sql);
     }
 
     $(document).ready(function () {
-        $('#projects-table').DataTable();
+        $('#news-table').DataTable();
     });
 
 
